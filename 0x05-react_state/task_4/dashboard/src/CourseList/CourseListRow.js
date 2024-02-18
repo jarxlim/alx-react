@@ -4,13 +4,15 @@ import { StyleSheet, css } from "aphrodite";
 
 function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
   return (
-    <tr className={isHeader ? css(styles.header) : css(styles.normal)}>
+    <tr style={rowStyle}>
       {isHeader ? (
         textSecondCell === null ? (
-          <th colSpan={2}>{textFirstCell}</th>
+          <th style={headerStyle} colSpan={2}>
+            {textFirstCell}
+          </th>
         ) : (
           <>
-            <th>{textFirstCell}</th>
+            <th style={headerStyle}>{textFirstCell}</th>
             <th style={headerStyle}>{textSecondCell}</th>
           </>
         )
